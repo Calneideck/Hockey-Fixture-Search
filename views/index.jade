@@ -1,0 +1,46 @@
+extends layout
+block content
+  h1 Hockey Fixture Search
+  form(action='javascript:void(0);')
+    label(for='comp') Competition:
+    input#comp(type='text')
+    .form-group
+      label(for='chk-men') Men's: 
+      input#chk-men(type='checkbox')
+      label.left-margin(for='chk-women') Women's: 
+      input#chk-women(type='checkbox')
+      label.left-margin(for='chk-men-masters') Men's Masters: 
+      input#chk-men-masters(type='checkbox')
+      label.left-margin(for='chk-women-masters') Women's Masters: 
+      input#chk-women-masters(type='checkbox')
+    .form-group
+      label(for='round') Round:
+      input#round(type='number')
+    .form-group
+      label(for='team') Team:
+      input#team(type='text')
+    .form-group
+      label(for='date') Date:
+      input#date(type='date')
+    .form-group
+      label(for='venue') Venue:
+      input#venue(type='text')
+    .form-group
+      input(type='submit', value='Search', onclick='search()')
+
+  h2 Fixtures #[span(id='fixture-count')]
+  #table-holder
+    table
+      thead
+        tr
+          th Competition
+          th Round
+          th Home Team
+          th Away Team
+          th Date
+          th Time
+          th Venue
+      tbody#row-holder
+
+  p Contact: 
+    a(href='mailto:hockeyfixture@gmail.com') hockeyfixture@gmail.com
