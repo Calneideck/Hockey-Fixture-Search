@@ -7,13 +7,14 @@ var chkMen = document.getElementById('chk-men');
 var chkWomen = document.getElementById('chk-women');
 var chkMensMasters = document.getElementById('chk-men-masters');
 var chkWomensMasters = document.getElementById('chk-women-masters');
+var chkJuniors = document.getElementById('chk-juniors');
 var rowHolder = document.getElementById('row-holder');
 var fixtureCount = document.getElementById('fixture-count');
 
 var terms = ['competition', 'round', 'team', 'date', 'venue'];
 var searchNodes = [comp, round, team, date, venue];
-var checks = [chkMen, chkWomen, chkMensMasters, chkWomensMasters];
-var checkNames = ['mens', 'womens', 'mensmasters', 'womensmasters'];
+var checks = [chkMen, chkWomen, chkMensMasters, chkWomensMasters, chkJuniors];
+var checkNames = ['mens', 'womens', 'mensmasters', 'womensmasters', 'juniors'];
 var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 function search() {
