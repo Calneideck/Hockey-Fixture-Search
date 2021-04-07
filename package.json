@@ -1,16 +1,42 @@
 {
-  "name": "hockey-fixture-search",
-  "description": "",
+  "name": "hfs",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "autoprefixer-stylus": "0.9.x",
-    "axis": "0.6.x",
-    "coffee-script": "1.x",
-    "css-pipeline": "0.3.x",
-    "jade": "1.x",
-    "js-pipeline": "0.2.x",
-    "jstransformer-marked": "1.x",
-    "marked": "0.3.x",
-    "rupture": "0.6.x",
-    "stylus": "0.54.x"
+    "@testing-library/jest-dom": "^5.11.10",
+    "@testing-library/react": "^11.2.6",
+    "@testing-library/user-event": "^12.8.3",
+    "date-fns": "^2.19.0",
+    "node-sass": "^5.0.0",
+    "react": "^17.0.2",
+    "react-app-polyfill": "^2.0.0",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "react-to-print": "^2.12.3",
+    "web-vitals": "^1.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
