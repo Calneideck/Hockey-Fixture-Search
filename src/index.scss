@@ -15,7 +15,9 @@ body {
   padding: 0 10px;
 }
 
-button {
+button,
+input[type=submit],
+input[type=reset] {
   cursor: pointer;
 }
 
@@ -79,6 +81,10 @@ label {
   font-weight: bold;
 }
 
+.btn-row {
+  display: flex;
+}
+
 input[type=number],
 input[type=text],
 input[type=date] {
@@ -111,10 +117,30 @@ input[type=submit] {
   border: none;
   outline: none;
   border-radius: 6px;
+  margin-right: 10px;
+}
+
+input[type=reset] {
+  width: 100%;
+  padding: 10px;
+  background: white;
+  color: #0bf;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  border: 2px #0bf solid;
+  margin-left: 10px;
+  width: 100px;
 }
 
 input[type=submit]:hover {
   background: #0cf;
+}
+
+input[type=reset]:hover {
+  background: #0cf;
+  color: white
 }
 
 .print-row {

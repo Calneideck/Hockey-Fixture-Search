@@ -8,19 +8,21 @@ import { useReactToPrint } from 'react-to-print';
 
 const MAX_ROWS = 100;
 
+const initialState = {
+  comp: '',
+  mens: false,
+  womens: false,
+  //mensMasters: false,
+  //womensMasters: false,
+  round: '',
+  team: '',
+  venue: '',
+  date: '',
+}
+
 export const App = () => {
   const fixtures = useGetFixtures();
-  const [filter, setFilter] = useState({
-    comp: '',
-    mens: false,
-    womens: false,
-    //mensMasters: false,
-    //womensMasters: false,
-    round: '',
-    team: '',
-    venue: '',
-    date: '',
-  });
+  const [filter, setFilter] = useState(initialState);
   const [matches, setMatches] = useState([])
   const tableElem = useRef()
   const firstSearch = useRef(true)
@@ -75,6 +77,10 @@ export const App = () => {
     search();
   }
 
+  const onReset = () => {
+    setFilter(initialState)
+  }
+
   return (
     <div className='container'>
       <h1>Vic Hockey Fixture Search 2021</h1>
@@ -117,7 +123,10 @@ export const App = () => {
           <input id='date' type='date' name='date' value={filter.date} onChange={onChange} />
         </div>
 
-        <input className='search' type='submit' value='Search' />
+        <div className="btn-row">
+          <input className='search' type='submit' value='Search' />
+          <input className='reset' type='reset' value='Reset' onClick={onReset} />
+        </div>
       </form>
 
       <div className='print-row'>
