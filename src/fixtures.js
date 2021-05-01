@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import fixturesUrl from './fixtures.csv';
 
 export const useGetFixtures = () => {
   const [fixtures, setFixtures] = useState({ state: 'loading' })
@@ -7,7 +6,7 @@ export const useGetFixtures = () => {
   useEffect(() => {
     const fetchFixtures = async () => {
       try {
-        const res = await fetch(fixturesUrl)
+        const res = await fetch('./fixtures.csv')
         if (res.ok) {
           const data = await res.text();
           const rows = data.split('\n').map(row => row.split(','))
