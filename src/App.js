@@ -12,8 +12,8 @@ const initialState = {
   comp: '',
   mens: false,
   womens: false,
-  //mensMasters: false,
-  //womensMasters: false,
+  mensMasters: false,
+  womensMasters: false,
   round: '',
   team: '',
   venue: '',
@@ -37,11 +37,17 @@ export const App = () => {
   const search = useCallback(() => {
     if (fixtures.state !== 'data') return
     const filteredMatches = fixtures.data.filter(row => {
-      let validComp = !filter.mens && !filter.womens
-      if (filter.mens && row[1].match(/Men'?s/))
+      let validComp = !filter.mens && !filter.womens && !filter.mensMasters && !filter.womensMasters
+      if (filter.mens && row[1].match(/Men'?s (?!Masters)/))
         validComp = true
 
-      if (filter.womens && row[1].match(/Women'?s/))
+      if (filter.womens && row[1].match(/Women'?s (?!Masters)/))
+        validComp = true
+
+      if (filter.mensMasters && row[1].match(/Men'?s Masters/))
+        validComp = true
+
+      if (filter.womensMasters && row[1].match(/Women'?s Masters/))
         validComp = true
 
       if (filter.comp && row[1].toLowerCase().indexOf(filter.comp.toLowerCase()) === -1)
@@ -97,11 +103,11 @@ export const App = () => {
           <label htmlFor='chk-women'>Women's:</label>
           <input id='chk-women' type='checkbox' value={filter.womens} onChange={e => setFilter({ ...filter, womens: e.currentTarget.checked })} />
 
-          {/* <label htmlFor='chk-men-masters'>Men's Masters:</label>
-        <input id='chk-men-masters' type='checkbox' value={filter.mensMasters} onChange={e => setFilter({ ...filter, mensMasters: e.currentTarget.checked })} />
+          <label htmlFor='chk-men-masters'>Men's Masters:</label>
+          <input id='chk-men-masters' type='checkbox' value={filter.mensMasters} onChange={e => setFilter({ ...filter, mensMasters: e.currentTarget.checked })} />
 
-        <label htmlFor='chk-womens-masters'>Women's Masters:</label>
-        <input id='chk-womens-masters' type='checkbox' value={filter.womensMasters} onChange={e => setFilter({ ...filter, womensMasters: e.currentTarget.checked })} /> */}
+          <label htmlFor='chk-womens-masters'>Women's Masters:</label>
+          <input id='chk-womens-masters' type='checkbox' value={filter.womensMasters} onChange={e => setFilter({ ...filter, womensMasters: e.currentTarget.checked })} />
         </div>
 
         <div className='form-group'>
@@ -135,7 +141,7 @@ export const App = () => {
         {fixtures.state === 'data' && <span className='count'>{matches.length} found</span>}
         <button className='print' title='Print' onClick={handlePrint}><PrintIcon /></button>
       </div>
-      <div class='table-holder' ref={tableElem}>
+      <div className='table-holder' ref={tableElem}>
         <table>
           <thead>
             <tr>
