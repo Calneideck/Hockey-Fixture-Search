@@ -89,8 +89,8 @@ export const App = () => {
 
   return (
     <div className='container'>
-      <h1>Vic Hockey Fixture Search 2021</h1>
-      <p className='disclaimer'>Updated 28/7/2021. Check the Hockey Victoria website for the most up-to-date fixtures.</p>
+      <h1>Vic Hockey Fixture Search 2022</h1>
+      <p className='disclaimer'>Updated 18/4/2022. Check the Hockey Victoria website for the most up-to-date fixtures.</p>
 
       <form onSubmit={onSubmit}>
         <label htmlFor='comp'>Competition:</label>
@@ -103,11 +103,11 @@ export const App = () => {
           <label htmlFor='chk-women'>Women's:</label>
           <input id='chk-women' type='checkbox' value={filter.womens} onChange={e => setFilter({ ...filter, womens: e.currentTarget.checked })} />
 
-          <label htmlFor='chk-men-masters'>Men's Masters:</label>
+          {/* <label htmlFor='chk-men-masters'>Men's Masters:</label>
           <input id='chk-men-masters' type='checkbox' value={filter.mensMasters} onChange={e => setFilter({ ...filter, mensMasters: e.currentTarget.checked })} />
 
           <label htmlFor='chk-womens-masters'>Women's Masters:</label>
-          <input id='chk-womens-masters' type='checkbox' value={filter.womensMasters} onChange={e => setFilter({ ...filter, womensMasters: e.currentTarget.checked })} />
+          <input id='chk-womens-masters' type='checkbox' value={filter.womensMasters} onChange={e => setFilter({ ...filter, womensMasters: e.currentTarget.checked })} /> */}
         </div>
 
         <div className='form-group'>
