@@ -7,12 +7,12 @@
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
     "date-fns": "^2.19.0",
-    "node-sass": "^7.0.0",
     "react": "^17.0.2",
     "react-app-polyfill": "^2.0.0",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "react-to-print": "^2.12.3",
+    "sass": "^1.50.1",
     "web-vitals": "^1.1.1"
   },
   "scripts": {
