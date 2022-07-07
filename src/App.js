@@ -90,7 +90,7 @@ export const App = () => {
   return (
     <div className='container'>
       <h1>Vic Hockey Fixture Search 2022</h1>
-      <p className='disclaimer'>Updated 18/4/2022. Check the Hockey Victoria website for the most up-to-date fixtures.</p>
+      <p className='disclaimer'>Updated 8/7/2022. Check the Hockey Victoria website for the most up-to-date fixtures.</p>
 
       <form onSubmit={onSubmit}>
         <label htmlFor='comp'>Competition:</label>
