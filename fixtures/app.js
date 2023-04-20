@@ -10,8 +10,8 @@ var lineReader = lr.createInterface({
 lineReader.on('line', function (line) {
     var words = line.split(',');
 
-    words[0] = words[0] // Round
-    words[1] = words[1].replace(' - 2022', '')
+    words[0] = words[0].split(' ')[1] // Round
+    words[1] = words[1].replace(' - 2023', '')
 
     var date = new Date(0);
     var day = words[2].split('/')

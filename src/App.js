@@ -89,8 +89,8 @@ export const App = () => {
 
   return (
     <div className='container'>
-      <h1>Vic Hockey Fixture Search 2022</h1>
-      <p className='disclaimer'>Updated 8/7/2022. Check the Hockey Victoria website for the most up-to-date fixtures.</p>
+      <h1>Vic Hockey Fixture Search 2023</h1>
+      <p className='disclaimer'>Updated 20/4/2023. Check the Hockey Victoria website for the most up-to-date fixtures.</p>
 
       <form onSubmit={onSubmit}>
         <label htmlFor='comp'>Competition:</label>
@@ -158,16 +158,16 @@ export const App = () => {
             {fixtures.state === 'loading' && <tr><td colSpan={6}>Loading...</td></tr>}
             {matches.slice(0, MAX_ROWS).map(match => {
               const bye = match[5] === 'BYE' || match[6] === 'BYE'
-              const dateTime = bye ? null : new Date(match[2] * 1000 * 60)
+              const dateTime = bye || isNaN(match[2]) ? null : new Date(match[2] * 1000 * 60)
               return (
                 <tr key={`${match[1]}/${match[0]}/${match[5]}/${match[6]}`}>
                   <td>{match[1]}</td>
                   <td>{match[0]}</td>
                   <td>{match[5]}</td>
                   <td>{match[6]}</td>
-                  <td>{!bye && format(dateTime, 'd/MM/yy')}</td>
-                  <td>{!bye && format(dateTime, 'h:mm a')}</td>
-                  <td>{!bye && `${match[4]} - ${match[3]}`}</td>
+                  <td>{dateTime && format(dateTime, 'd/MM/yy')}</td>
+                  <td>{dateTime && format(dateTime, 'h:mm a')}</td>
+                  <td>{dateTime && `${match[4]} - ${match[3]}`}</td>
                 </tr>
               )
             })}
