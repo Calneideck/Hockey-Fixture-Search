@@ -89,8 +89,8 @@ export const App = () => {
 
   return (
     <div className='container'>
-      <h1>Vic Hockey Fixture Search 2023</h1>
-      <p className='disclaimer'>Updated 5/7/2023. Check the Hockey Victoria website for the most up-to-date fixtures.</p>
+      <h1>Vic Hockey Fixture Search 2024</h1>
+      <p className='disclaimer'>Updated 6/4/2024. Check the Hockey Victoria website for the most up-to-date fixtures.</p>
 
       <form onSubmit={onSubmit}>
         <label htmlFor='comp'>Competition:</label>
